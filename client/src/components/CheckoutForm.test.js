@@ -6,7 +6,7 @@ import CheckoutForm from "./CheckoutForm";
 
 test("form header renders", () => {
     const {queryByText} = render(<CheckoutForm/>);
-    const header = querybyText(/form/i);
+    const header = queryByText(/form/i);
     expect(header).toBeInTheDocument();
 });
 
@@ -19,7 +19,7 @@ test("form shows success message on submit with form details", () => {
     const city = getByLabelText(/city/i)
     const state = getByLabelText(/state/i)
     const zipcode = getByLabelText(/zip/i)
-    const button = getByLabelText(/button/i)
+    const button = getByTestId(/button/i)
 
     fireEvent.change(firstname, {target: {value: "Angelica"}});
     fireEvent.change(lastname, {target: {value: "Perez"}});
